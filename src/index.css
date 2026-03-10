@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+  --background: 210 17% 98%;        /* #F8F9FA */
+  --foreground: 210 11% 16%;        /* #212529 */
+
+  --card: 0 0% 100%;                /* #FFFFFF */
+  --card-foreground: 210 11% 16%;
+
+  --primary: 215 37% 18%;           /* #1B263B */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 211 28% 46%;         /* #415A77 */
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 212 25% 57%;             /* #778DA9 */
+  --muted-foreground: 210 11% 16%;
+
+  --accent: 211 28% 46%;            /* #415A77 */
+  --accent-foreground: 0 0% 100%;
+
+  --border: 210 16% 90%;
+  --input: 210 16% 90%;
+  --ring: 215 37% 18%;
+
+  --radius: 0.5rem;
+}
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%
+  }
+}
+
+.word {
+  white-space: nowrap;
+}
+
+/* NAV LINK BASE */
+
+.nav-link {
+  position: relative;
+  padding: 6px 4px;
+  font-weight: 500;
+  color: hsl(var(--muted));
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+
+/* hover effect */
+
+.nav-link:hover {
+  color: hsl(var(--primary));
+  transform: scale(1.05);
+}
+
+/* underline animation */
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background: hsl(var(--primary));
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+/* show underline only on hover */
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE TAB */
+
+.nav-active {
+  color: hsl(var(--primary));
+  font-weight: 500;
+}
+
+/* remove underline for active tab */
+
+.nav-active::after {
+  width: 0%;
+}
+
+body {
+  background-color: #F8F9FA !important;
+  background-image: 
+    linear-gradient(#e5e7eb 1px, transparent 1px),
+    linear-gradient(90deg, #e5e7eb 1px, transparent 1px) !important;
+  background-size: 40px 40px !important;
+}
